@@ -27,7 +27,7 @@ const database = {
             password: "password"
         }
     ],
-    districts: [
+    locations: [
         { id: 1, name: "Centras" },
         { id: 2, name: "Verkiai" },
         { id: 3, name: "Žirmūnai" },
