@@ -7,10 +7,11 @@ router.get("/drivers", (request, response, next) => {
     response.send(drivers);
 });
 
-router.get("/drivers/:locationId", (request, response, next) => {
-    const locationId = parseInt(request.params.locationId);
-    var drivers = database.users.filter(user => user.locationId === locationId);
-    response.send(drivers);
+router.get("/driver/:id/matches", (request, response, next) => {
+    const driverId = parseInt(request.params.id);
+    var drivers = database.users.filter(user => user.id === driverId)[0];
+    var matches = database.matches.filter(match => match.driverId === driverId);
+    response.send(matches);
 });
 
 module.exports = router;

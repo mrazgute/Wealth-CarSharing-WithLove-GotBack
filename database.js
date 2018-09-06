@@ -28,10 +28,11 @@ const database = {
         }
     ],
     locations: [
-        { id: 1, name: "Centras" },
+        { id: 1, name: "Antakalnis" },
         { id: 2, name: "Verkiai" },
         { id: 3, name: "Žirmūnai" },
-        { id: 4, name: "Šeškinė" }
+        { id: 4, name: "Šeškinė" },
+        { id: 5, name: "Šeškinė" }
     ],
     matches: [
         {

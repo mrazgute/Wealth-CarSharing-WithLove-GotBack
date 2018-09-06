@@ -18,6 +18,7 @@
   "homepage": "https://github.com/mrazgute/Wealth-CarSharing-WithLove-GotBack#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "uuid": "^3.3.2"
   }
 }
