@@ -42,6 +42,13 @@ router.patch("/match/:id", (request, response, next) => {
     response.sendStatus(200);
 });
 
+router.get("/match/status/", (request, response, next) => {
+    response.send({
+        PASSENGER_SAID_YES: database.PASSENGER_SAID_YES,
+        DRIVER_SAID_YES: database.DRIVER_SAID_YES
+    });
+});
+
 router.get("/match/passenger/", (request, response, next) => {    
     database.PASSENGER_SAID_YES = true;
     response.sendStatus(200);
