@@ -42,4 +42,24 @@ router.patch("/match/:id", (request, response, next) => {
     response.sendStatus(200);
 });
 
+router.get("/match/passenger/", (request, response, next) => {    
+    database.PASSENGER_SAID_YES = true;
+    response.sendStatus(200);
+});
+
+router.get("/match/driver/", (request, response, next) => {    
+    database.DRIVER_SAID_YES = true;
+    response.sendStatus(200);
+});
+
+router.get("/match/driver/reset/", (request, response, next) => {
+    database.DRIVER_SAID_YES = false;
+    response.sendStatus(200);
+});
+
+router.get("/match/passenger/reset/", (request, response, next) => {
+    database.PASSENGER_SAID_YES = false;
+    response.sendStatus(200);
+});
+
 module.exports = router;

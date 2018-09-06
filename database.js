@@ -43,6 +43,8 @@ const database = {
             time: new Date("2018-09-06T10:00Z")
         }
     ],
+    DRIVER_SAID_YES: false,
+    PASSENGER_SAID_YES: false
 
 };
 
