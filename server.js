@@ -1,26 +1,18 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
+const loginController = require("./routes/login");
+const usersController = require("./routes/users");
+
 app.use(bodyParser.json());
 
-//DB 
-const users = {};
-let userSeq = 1;
+app.use("/", loginController);
+app.use("/", usersController);
 
-app.get('/user/:id', (req, res) => {
-    if(users[req.params.id]) {
-        res.send(users[req.params.id]);
-    } else {
-        res.sendStatus(500);
-    }
-})
+app.listen(process.env.PORT || 5000, () => console.log("LoveRide is listening on port 5000!"));
 
-app.post('/user', (req, res) => {
-    const id = userSeq;
-    userSeq++;
-    users[id] = {data: req.body, id: id};
-    res.send(users[id]);
-})
-app.get('/', (req, res) => res.send('Hello World!'))
-
-app.listen(5000, () => console.log('Example app listening on port 5000!'))
+// Global error handler
+app.use((err, req, res, next) => {
+    res.status(err.status || 500);
+    res.json({ errorMessage: err.message });
+});
