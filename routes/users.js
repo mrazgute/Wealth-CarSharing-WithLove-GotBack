@@ -10,8 +10,8 @@ router.post("/user", (request, response, next) => {
         throw error;
     }
 
-    const { name, type, phone, shortName } = request.body;
-    if (!name || !type || !phone) {
+    const { name, type, phone, shortName, locationId } = request.body;
+    if (!name || !type || !phone || !locationId) {
         throw error;
     }
 
@@ -22,29 +22,30 @@ router.post("/user", (request, response, next) => {
         name,
         type,
         phone,
-        shortName
+        shortName,
+        locationId
     });
 
     response.sendStatus(201);
 });
 
-router.patch("/user/:id/type", (request, response, next) => {
+router.patch("/user/:id", (request, response, next) => {
     const error = new Error("Entity validation error.");
     error.status = 400;
 
-    if (!request.body) {
+    if (!request.params.id || !request.body) {
         throw error;
     }
 
     const userId = parseInt(request.params.id);
-    const type = request.body.type;
-
-    if (!userId || !type) {
-        throw error;
-    }
+    const { name, type, phone, shortName, locationId } = request.body;
 
     var user = database.users.filter(user => user.id === userId)[0];
-    user.type = type;
+    user.type = type || user.type;
+    user.name = name || user.name;
+    user.phone = phone || user.phone;
+    user.shortName = shortName || user.shortName;
+    user.locationId = locationId || user.locationId;
     response.sendStatus(200);
 });
 
@@ -64,6 +65,5 @@ router.get("/user/:id", (request, response, next) => {
     }
     else response.sendStatus(404);
 });
-
 
 module.exports = router;

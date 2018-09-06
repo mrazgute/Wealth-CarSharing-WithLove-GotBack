@@ -6,19 +6,22 @@ const database = {
             name: "Jonas Antanaitis",
             type: "DRIVER",
             phone: "+37012345678",
-            shortName: "JOANT"
+            shortName: "JOANT",
+            locationId: 1
         }, {
             id: 2,
             name: "Gediminas Morkys",
             type: "DRIVER",
             phone: "+37012345679",
-            shortName: "GMO"
+            shortName: "GMO",
+            locationId: 3
         }, {
             id: 3,
             name: "Valentas Milčius",
             type: "PASSENGER",
             phone: "+37012345670",
-            shortName: "VALM"
+            shortName: "VALM",
+            locationId: 1
         }
     ],
     districts: [
@@ -32,7 +35,7 @@ const database = {
             id: 1,
             driverId: 1,
             passengerId: 2,
-            districtId: 3,
+            locationId: 3,
             time: new Date("2018-09-06T10:00Z")
         }
     ],
