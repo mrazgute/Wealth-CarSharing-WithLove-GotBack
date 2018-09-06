@@ -11,8 +11,7 @@ router.post("/login", (request, response, next) => {
     }
 
     const users = database.users.filter(user =>
-        user.username == request.body.username &&
-        user.password === request.body.password);
+        user.username == request.body.username);
 
     if (!users.length) {
         throw error;
