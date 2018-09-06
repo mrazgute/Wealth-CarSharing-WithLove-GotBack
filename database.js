@@ -6,7 +6,7 @@ const database = {
             name: "Jonas Antanaitis",
             type: "DRIVER",
             phone: "+37012345678",
-            shortName: "JOANT",
+            username: "joant",
             locationId: 1,
             password: "password"
         }, {
@@ -14,7 +14,7 @@ const database = {
             name: "Gediminas Morkys",
             type: "DRIVER",
             phone: "+37012345679",
-            shortName: "GMO",
+            username: "gmo",
             locationId: 3,
             password: "password"
         }, {
@@ -22,7 +22,7 @@ const database = {
             name: "Valentas Milčius",
             type: "PASSENGER",
             phone: "+37012345670",
-            shortName: "VALM",
+            username: "valm",
             locationId: 1,
             password: "password"
         }
