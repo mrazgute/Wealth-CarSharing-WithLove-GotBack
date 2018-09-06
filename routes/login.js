@@ -6,11 +6,14 @@ router.post("/login", (request, response, next) => {
     const error = new Error("Forbidden");
     error.status = 401;
 
-    if (!request.body && !request.body.phone) {
+    if (!request.body && !request.body.username && !request.body.password) {
         throw error;
     }
 
-    const users = database.users.filter(user => user.phone == request.body.phone);
+    const users = database.users.filter(user =>
+        user.username == request.body.phone &&
+        user.password === request.body.password);
+
     if (!users.length) {
         throw error;
     }
