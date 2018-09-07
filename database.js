@@ -3,26 +3,26 @@ const database = {
     users: [
         {
             id: 1,
-            name: "Jonas Antanaitis",
+            name: "Rimantas",
             type: "DRIVER",
             phone: "+37012345678",
-            username: "joant",
+            username: "rimantas",
             locationId: 1,
             password: "password"
         }, {
             id: 2,
-            name: "Gediminas Morkys",
+            name: "Slavikas",
             type: "DRIVER",
             phone: "+37012345679",
-            username: "gmo",
+            username: "slavikas",
             locationId: 3,
             password: "password"
         }, {
             id: 3,
-            name: "Valentas Milčius",
+            name: "Adelė",
             type: "PASSENGER",
             phone: "+37012345670",
-            username: "valm",
+            username: "adele",
             locationId: 1,
             password: "password"
         }
